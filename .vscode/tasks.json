@@ -1,0 +1,46 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "cl",
+            "type": "shell",
+            "command": "cl",
+            "args": [
+                "\"/DDWORD=unsigned int\"",
+                "\"/DWORD=unsigned short\"",
+                "\"/DBYTE=unsigned char\"",
+                "/MD",
+                "/c",
+                "${fileBasename}"
+            ]
+        },
+        {
+            "label": "gcc",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "\"-DDWORD=unsigned int\"",
+                "\"-DWORD=unsigned short\"",
+                "\"-DBYTE=unsigned char\"",
+                "-c",
+                "${fileBasename}"
+            ]
+        },
+        {
+            "label": "plm2c",
+            "type": "shell",
+            "command": "plm2c",
+            "args": [
+                "${fileBasename}"
+            ]
+        },
+        {
+            "label": "plm2cdecl",
+            "type": "shell",
+            "command": "py plm2cdecl.py < ${fileBasename} > ${fileBasenameNoExtension}.h",
+            "problemMatcher": []
+        }
+    ]
+}

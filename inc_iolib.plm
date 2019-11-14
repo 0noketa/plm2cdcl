@@ -1,0 +1,26 @@
+inc_iolib: do;
+
+put_char: procedure(c) external;
+    declare c dword;
+end put_char;
+
+put_real: procedure(f) external;
+    declare f real;
+end put_real;
+
+put_dword: procedure(i) external;
+    declare i dword;
+end put_dword;
+
+put_word: procedure(i) external;
+    declare i word;
+end put_word;
+
+put_ln: procedure external;
+end put_ln;
+
+sample_point: procedure dword external;
+end sample_point;
+
+
+end inc_iolib;

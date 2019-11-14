@@ -1,0 +1,53 @@
+main: do;
+
+$ INCLUDE(inc_iolib.plm)
+
+
+main: procedure public;
+    declare a (8)real;
+    declare i integer;
+    declare p pointer at(@a);
+    declare a2 based p (8)real;
+
+
+    do i = 0 to 7;
+        a(i) = i * i;
+    end;
+
+
+    do i = 0 to 7;
+        call put_real(a(i))
+        call put_ln(10);
+    end;
+
+end main;
+
+sub: procedure(p) public;
+    declare p pointer;
+    declare a2 based p (8)real;
+    declare i integer;
+
+    do i = 0 to 7;
+        call put_real(a2(i));
+        call put_char(32);
+    end;
+    call put_ln(0);
+
+end sub;
+
+main1: procedure public;
+    declare a (8)real;
+    declare i integer;
+
+    n = 0.25;
+
+    do i = 0 to 7;
+        a(i) = i * i;
+    end;
+
+    call sub(@a);
+
+end main1;
+
+
+end main;

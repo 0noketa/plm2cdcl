@@ -1,0 +1,27 @@
+tes: do;
+
+/*  */
+$ INCLUDE(inc_swap.plm)
+
+declare dcl literally 'declare';
+dcl lit literally 'literally';
+dcl proc lit 'procedure';
+declare obj literally 'structure(x byte)';
+dcl (o0,o1) structure(x byte);
+tes1: proc;
+    dcl d literally 'declare';
+    d o structure(x dword, y dword);
+
+    o.x = 0;
+
+end tes1;
+
+tes2: proc integer;
+    dcl i integer;
+L1:
+    i = 0;
+    return i;
+end tes2;
+
+
+end tes;

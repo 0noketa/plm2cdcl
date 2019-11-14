@@ -1,0 +1,78 @@
+mod_swap: do;
+
+/*
+$1_swap: procedure(p, q) $1 public reentrant;\n    declare (p, q) pointer;\n    declare (x based p, y based q, z) $1;\n    z = x;\n    x = y;\n    y = z;\n    return p;\nend $1_swap;\n$1_swapl: procedure(p, q) $1 public;\n    declare (p, q) pointer;\n    call $1_swap(p,q);\n    return q;\nend $1_swapl;\n
+*/
+
+integer_swap: procedure(p, q) integer public reentrant;
+    declare (p, q) pointer;
+    declare (x based p, y based q, z) integer;
+    z = x;
+    x = y;
+    y = z;
+    return p;
+end integer_swap;
+integer_swapl: procedure(p, q) integer public;
+    declare (p, q) pointer;
+    call integer_swap(p,q);
+    return q;
+end integer_swapl;
+
+dword_swap: procedure(p, q) dword public reentrant;
+    declare (p, q) pointer;
+    declare (x based p, y based q, z) dword;
+    z = x;
+    x = y;
+    y = z;
+    return p;
+end dword_swap;
+dword_swapl: procedure(p, q) dword public;
+    declare (p, q) pointer;
+    call dword_swap(p,q);
+    return q;
+end dword_swapl;
+
+word_swap: procedure(p, q) word public reentrant;
+    declare (p, q) pointer;
+    declare (x based p, y based q, z) word;
+    z = x;
+    x = y;
+    y = z;
+    return p;
+end word_swap;
+word_swapl: procedure(p, q) word public;
+    declare (p, q) pointer;
+    call word_swap(p,q);
+    return q;
+end word_swapl;
+
+byte_swap: procedure(p, q) byte public reentrant;
+    declare (p, q) pointer;
+    declare (x based p, y based q, z) byte;
+    z = x;
+    x = y;
+    y = z;
+    return p;
+end byte_swap;
+byte_swapl: procedure(p, q) byte public;
+    declare (p, q) pointer;
+    call byte_swap(p,q);
+    return q;
+end byte_swapl;
+
+real_swap: procedure(p, q) real public reentrant;
+    declare (p, q) pointer;
+    declare (x based p, y based q, z) real;
+    z = x;
+    x = y;
+    y = z;
+    return p;
+end real_swap;
+real_swapl: procedure(p, q) real public;
+    declare (p, q) pointer;
+    call real_swap(p,q);
+    return q;
+end real_swapl;
+
+
+end mod_swap;

@@ -1,0 +1,43 @@
+inc_swap: do;
+
+/*
+$1_swap: procedure(p, q) $1 external;\n    declare (p, q) pointer;\nend $1_swap;\n$1_swapl: procedure(p, q) $1 external;\n    declare (p, q) pointer;\nend $1_swapl;\n
+*/
+
+integer_swap: procedure(p, q) integer external;
+    declare (p, q) pointer;
+end integer_swap;
+integer_swapl: procedure(p, q) integer external;
+    declare (p, q) pointer;
+end integer_swapl;
+
+dword_swap: procedure(p, q) dword external;
+    declare (p, q) pointer;
+end dword_swap;
+dword_swapl: procedure(p, q) dword external;
+    declare (p, q) pointer;
+end dword_swapl;
+
+word_swap: procedure(p, q) word external;
+    declare (p, q) pointer;
+end word_swap;
+word_swapl: procedure(p, q) word external;
+    declare (p, q) pointer;
+end word_swapl;
+
+byte_swap: procedure(p, q) byte external;
+    declare (p, q) pointer;
+end byte_swap;
+byte_swapl: procedure(p, q) byte external;
+    declare (p, q) pointer;
+end byte_swapl;
+
+real_swap: procedure(p, q) real external;
+    declare (p, q) pointer;
+end real_swap;
+real_swapl: procedure(p, q) real external;
+    declare (p, q) pointer;
+end real_swapl;
+
+
+end inc_swap;

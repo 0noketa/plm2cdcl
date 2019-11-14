@@ -1,0 +1,68 @@
+mod_point: do;
+
+$ INCLUDE(inc_iolib.plm)
+
+point_init: procedure(p_point, x, y) dword public reentrant;
+    declare p_point pointer;
+    declare (x, y) real;
+    declare point based p_point (2)real;
+
+    call put_real(x);
+    call put_ln(0);
+    call put_real(y);
+    call put_ln(0);
+    
+    point(0) = x;
+    point(1) = y;
+
+    call put_real(point(0));
+    call put_ln(0);
+    call put_real(point(1));
+    call put_ln(0);
+
+
+    return p_point;
+end point_init;
+
+point_initp: procedure(p_point0, p_point1) dword public reentrant;
+    declare (p_point0, p_point1) pointer;
+    declare
+        (point0 based p_point0
+        ,point1 based p_point1
+        ) (2)real;
+
+    point0(0) = point1(0);
+    point0(1) = point1(1);
+
+    return p_point0;
+end point_initp;
+
+point_getx: procedure(p_point) dword public reentrant;
+    declare p_point pointer;
+    declare point based p_point (2)real;
+
+    return point(0);
+end point_getx;
+
+point_gety: procedure(p_point) dword public reentrant;
+    declare p_point pointer;
+    declare point based p_point (2)real;
+
+    return point(1);
+end point_gety;
+
+point_addp: procedure(p_point0, p_point1) dword public reentrant;
+    declare (p_point0, p_point1) pointer;
+    declare
+        (point0 based p_point0
+        ,point1 based p_point1
+        ) (2)real;
+
+    point0(0) = point0(0) + point1(0);
+    point0(1) = point0(1) + point1(1);
+
+    return p_point0;
+end point_addp;
+
+
+end mod_point;

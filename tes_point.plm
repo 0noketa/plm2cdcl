@@ -1,0 +1,65 @@
+tes_point: do;
+
+$ INCLUDE(inc_iolib.plm)
+$ INCLUDE(inc_point.plm)
+
+sgn0: procedure;
+call put_char(33);
+call put_ln;
+end sgn0;
+sgn: procedure;
+call put_char(33);
+call put_ln(0);
+end sgn;
+
+
+
+putp1: procedure(p) reentrant;
+    declare p pointer;
+    declare point based p (2)real;
+
+    call put_real(point_getx(p));
+    call put_char(44);
+    call put_real(point_gety(p));
+/*
+    call put_real(point(0));
+    call put_real(point(1));
+
+*/
+    call put_ln(0);
+end putp1;
+
+putp3: procedure(p0, p1, p2) reentrant;
+    declare (p0, p1, p2) pointer;
+
+    call putp1(p0);
+    call putp1(p1);
+    call putp1(p2);
+end putp3;
+
+
+main: procedure;
+    declare (p0, p1, p2) (2)real;
+call sgn(0);
+    call point_init(@p0, 0.0, 0.0);
+    call point_init(@p1, 3.0, 5.0);
+    call point_init(@p2, 200.0, 100.0);
+
+call put_real(p1(0));
+call put_ln(0);
+call put_real(p1(1));
+call put_ln(0);
+call sgn(0);
+    call putp1(@p0);
+    call putp3(@p0, @p1, @p2);
+call sgn(0);
+    call point_addp(@p0, @p1);
+    call point_addp(@p0, @p1);
+    call point_addp(@p1, @p2);
+    call point_addp(@p1, @p2);
+
+    call putp3(@p0, @p1, @p2);
+end main;
+
+
+end tes_point;
