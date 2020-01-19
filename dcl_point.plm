@@ -1,0 +1,39 @@
+dcl_point: do;
+
+point_init: procedure(p_point, x, y) dword external;
+    declare p_point pointer;
+    declare (x, y) real;
+end point_init;
+
+point_copyp: procedure(p_point0, p_point1) dword external;
+    declare (p_point0, p_point1) pointer;
+end point_copyp;
+
+point_getx: procedure(p_point) real external;
+    declare p_point pointer;
+end point_getx;
+
+point_gety: procedure(p_point) real external;
+    declare p_point pointer;
+end point_gety;
+
+point_addp: procedure(p_point0, p_point1) dword external;
+    declare (p_point0, p_point1) pointer;
+end point_addp;
+
+point_mulp: procedure(p_point0, p_point1) dword external;
+    declare (p_point0, p_point1) pointer;
+end point_mulp;
+
+point_addx: procedure(p_point, x) dword public external;
+    declare p_point pointer;
+    declare x real;
+end point_addx;
+
+point_addy: procedure(p_point, y) dword public external;
+    declare p_point pointer;
+    declare y real;
+end point_addy;
+
+
+end dcl_point;

@@ -1,9 +1,9 @@
 main: do;
 
-$ INCLUDE(inc_iolib.plm)
+$ INCLUDE(dcl_iolib.plm)
 
 
-main: procedure public;
+main: procedure public reentrant;
     declare a (8)real;
     declare i integer;
     declare p pointer at(@a);
@@ -17,12 +17,12 @@ main: procedure public;
 
     do i = 0 to 7;
         call put_real(a(i))
-        call put_ln(10);
+        call put_ln;
     end;
 
 end main;
 
-sub: procedure(p) public;
+sub: procedure(p) public reentrant;
     declare p pointer;
     declare a2 based p (8)real;
     declare i integer;
@@ -35,7 +35,7 @@ sub: procedure(p) public;
 
 end sub;
 
-main1: procedure public;
+main1: procedure public reentrant;
     declare a (8)real;
     declare i integer;
 

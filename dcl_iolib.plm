@@ -4,6 +4,10 @@ put_char: procedure(c) external;
     declare c dword;
 end put_char;
 
+put_integer: procedure(f) external;
+    declare f integer;
+end put_integer;
+
 put_real: procedure(f) external;
     declare f real;
 end put_real;
@@ -19,8 +23,8 @@ end put_word;
 put_ln: procedure external;
 end put_ln;
 
-sample_point: procedure dword external;
-end sample_point;
+get_char: procedure dword external;
+end get_char;
 
 
 end inc_iolib;

@@ -2,14 +2,13 @@
 #include <stdlib.h>
 
 void put_char(unsigned c) { putchar(c); }
+void put_integer(short i) { printf("%hd", i); }
 void put_real(float f) { printf("%0.8f", f); }
-void put_real2(float (**f)[2]) { printf("%p, %f,%f", f, 0.0+(**f)[0], 0.0+(**f)[1]); }
-void put_dword(unsigned i) { printf("%d", i); }
-void put_word(unsigned short i) { printf("%d", i); }
-void put_ln() { putchar('\n'); }
-void sample_point(float (**q)[2]) {
-    static float a[2] = { 12., 34. };
-    float *p = &a;
-    put_real2(&p);
-    *q = &a;
-}
+void put_dword(unsigned i) { printf("%u", i); }
+void put_word(unsigned short i) { printf("%hu", i); }
+void put_ln(void) { putchar('\n'); }
+unsigned get_char(void) { return getchar(); }
+short get_integer(void) { short r = 0; scanf("%hd", &r); return r; }
+float get_real(void) { float r = 0; scanf("%f", &r); return r; }
+unsigned get_dword(void) { unsigned r = 0; scanf("%u", &r); return r; }
+unsigned short get_word(void) { unsigned short r = 0; scanf("%hu", &r); return r; }

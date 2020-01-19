@@ -1,4 +1,4 @@
-inc_swap: do;
+dcl_swap: do;
 
 /*
 $1_swap: procedure(p, q) $1 external;\n    declare (p, q) pointer;\nend $1_swap;\n$1_swapl: procedure(p, q) $1 external;\n    declare (p, q) pointer;\nend $1_swapl;\n
@@ -40,4 +40,4 @@ real_swapl: procedure(p, q) real external;
 end real_swapl;
 
 
-end inc_swap;
+end dcl_swap;
